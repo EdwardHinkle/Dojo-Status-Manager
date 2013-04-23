@@ -1,0 +1,3 @@
+dojoStatusManager
+=================
+description coming soon...
