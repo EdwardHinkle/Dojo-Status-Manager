@@ -17,13 +17,15 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/query
             console.debug("Status Manager Built");
 
             var containerId = config.containerId || undefined;
-            var statusImageIndicator = config.loadingImage || "http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif";
+            var statusImageIndicator = config.loadingImage || undefined;
             var loadingMessageString = config.loadingString || "Please Wait...";
 
             //-- Build Loading Status Box --//
             this.statusBox = construct.create("div", { id: "statusManager" }, dom.byId(containerId));
-            var statusImage = construct.create("img", { id: "statusManagerIndicator", src: statusImageIndicator }, this.statusBox);
-            domClass.add(statusImage, "statusImage");
+            if (statusImageIndicator !== undefined) {
+                var statusImage = construct.create("img", { id: "statusManagerIndicator", src: statusImageIndicator }, this.statusBox);
+                domClass.add(statusImage, "statusImage");
+            }
             this.loadingString = construct.create("span", { innerHTML: loadingMessageString + "<br>" }, this.statusBox);
             domClass.add(this.loadingString, "loadingString");
             this.statusMessage = construct.create("span", { id: "statusManagerMessage" }, this.statusBox);
