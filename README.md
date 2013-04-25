@@ -1,6 +1,18 @@
 dojo-status-manager
 =================
 
+##TL;DR
+This is a dojo module you can include in a dojo project, so you can have different classes all announce what the user is currently waiting to load. You create the object, and then use dojo/topic to communicate with it. It keeps track of displaying itself and hiding itself.
+It uses an MIT license.
+
+
+##Examples
+- [Basic Example](http://edwardhinkle.com/projects/dojo-status-manager/examples/basic-example/)
+- [Using Multiple Messages](http://edwardhinkle.com/projects/dojo-status-manager/examples/multiple-messages-example/)
+- [Sliding Box](http://edwardhinkle.com/projects/dojo-status-manager/examples/sliding-box-example/)
+
+##Instructions
+
 A dojo module that handles displaying an applications current activity.
 
 You can include it as a module into a dojo project. You provide a dom id to add the status manager to as well as some configuration options.
@@ -14,7 +26,6 @@ You can include it as a module into a dojo project. You provide a dom id to add 
         });
         
     }
-
 
 Once you've created the status manager, you can then send updates to it by using the dojo/topic module.
 
@@ -54,6 +65,5 @@ This is for customizing sizing and position of the "busy" icon
 This is the class that is added when the status manager is hidden
 
 
-Author
-=================
+##Author
 For other open source projects, visit my [GitHub Portal](http://edwardhinkle.com)
