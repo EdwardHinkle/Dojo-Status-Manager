@@ -1,3 +1,4 @@
-dojoStatusManager
+dojo-status-manager
 =================
-description coming soon...
+
+A dojo module that handles displaying an applications current activity.
