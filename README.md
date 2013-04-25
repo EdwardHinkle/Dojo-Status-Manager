@@ -22,7 +22,8 @@ Once you've created the status manager, you can then send updates to it by using
         // You send an updateStart with a message about what's updating
         topic.publish("updateStart", "Message about what's updating");
         
-        // When you are done with that update, send an updateStop with the same message as the original to remove that message
+        // When you are done with that update, send an updateStop with the same message as the
+        // original to remove that message
         topic.publish("updateStop", "Message about what's updating");        
         
     }
