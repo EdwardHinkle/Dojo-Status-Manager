@@ -29,6 +29,8 @@ define(["dojo/_base/declare", "dojo/_base/array", "dojo/_base/lang", "dojo/query
             this.statusMessage = construct.create("span", { id: "statusManagerMessage" }, this.statusBox);
             domClass.add(this.statusMessage, "statusMessage");
 
+            domClass.add(this.statusBox, "hide");
+
             //-- Set up map update subscriptions --//
             topic.subscribe("updateStart", lang.hitch(this, function(message){
                 this.start(message);
