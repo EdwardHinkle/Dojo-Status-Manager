@@ -1,0 +1,73 @@
+<html>
+<head>
+<title>Status Manager Example</title>
+<script>
+    // Instead of using data-dojo-config, we’re creating a dojoConfig
+    // object *before* we load dojo.js; they’re functionally identical,
+    // it's just easier to read this approach with a larger configuration.
+    var dojoConfig = {
+        async: true,
+        // This code registers the correct location of the "demo"
+        // package so we can load Dojo from the CDN whilst still
+        // being able to load local modules
+        packages: [{
+            name: "managers",
+            location: location.pathname.replace(/\/[^/]*$/, '') + '/../js/manager/'
+        }]
+    };
+</script>
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.8.3/dojo/dojo.js"></script>
+
+<script type="text/javascript">
+require(["dojo/dom", "dojo/topic", "managers/statusManager", "dojo/domReady!"], function(dom, topic, statusManager){
+    
+
+    var sManager = new statusManager({
+        containerId: "demoParent",
+        loadingImage: "./images/ajax-loader.gif",
+        loadingString: "Loading..."
+    });
+
+    setTimeout(function(){
+		// You send an updateStart with a message about what's updating
+	    topic.publish("updateStart", "First update announcement");
+	}, 2000);
+
+    setTimeout(function(){
+        // You send an updateStart with a message about what's updating
+        topic.publish("updateStart", "Surprise! A short update is happening also");
+    }, 3000);
+
+    setTimeout(function(){
+        // You send an updateStart with a message about what's updating
+        topic.publish("updateStart", "Oh, also a long update is here too");
+    }, 4000);
+
+    setTimeout(function(){
+        // You send an updateStart with a message about what's updating
+        topic.publish("updateStop", "Surprise! A short update is happening also");
+    }, 5000);
+
+    setTimeout(function(){
+	    // When you are done with that update, send an updateStop with the same message as the
+	    // original to remove that message
+	    topic.publish("updateStop", "First update announcement");
+	}, 8000);
+
+    setTimeout(function(){
+        // You send an updateStart with a message about what's updating
+        topic.publish("updateStop", "Oh, also a long update is here too");
+    }, 12000);
+
+});
+</script>
+<link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<h1>Status Manager Example</h1>
+<p><a href="https://github.com/EdwardHinkle/Dojo-Status-Manager">Download Source Code from GitHub</a></p>
+<div id="demoParent">
+
+</div>
+</body>
+</html>
