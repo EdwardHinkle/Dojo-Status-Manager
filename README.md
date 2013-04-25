@@ -9,7 +9,7 @@ You can include it as a module into a dojo project. You provide a dom id to add 
         
         var sManager = new statusManager({
             containerId: "{domId}",
-            loadingImage: "http://www.ajaxload.info/cache/FF/FF/FF/00/00/00/1-0.gif",
+            loadingImage: "./images/ajax-loader.gif",
             loadingString: "Loading..."
         });
         
@@ -27,6 +27,9 @@ Once you've created the status manager, you can then send updates to it by using
         topic.publish("updateStop", "Message about what's updating");        
         
     }
+
+You can send multiple messages, and Status Manager will keep track of when it should display and when it should dissapear. For an example of this in use, check out the [Multiple Message Example](https://github.com/EdwardHinkle/Dojo-Status-Manager/tree/master/example-multiple-messages)
+
 
 You will also need to include some css styles. See /css/style.css for example use.
 
