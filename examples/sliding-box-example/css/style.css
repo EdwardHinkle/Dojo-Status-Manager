@@ -1,0 +1,38 @@
+#statusManager {
+    background-color: black; 
+    color: white; 
+    padding: 10px; 
+    border: solid 1px white;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    margin-left: -125px;
+    width: 250px;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-transition: top 0.15s ease-in-out;
+	-moz-transition: top 0.15s ease-in-out;
+	-o-transition: top 0.15s ease-in-out;
+	transition: top 0.15s ease-in-out;
+}
+.statusMessage {
+    font-size: 14px;
+}
+.statusImage {
+    height: 24px;
+    width: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    margin-bottom: 5px;
+}
+#statusManager.hide {
+	top: -300px;
+    -webkit-transition: top 0.15s ease-in-out;
+    -moz-transition: top 0.15s ease-in-out;
+    -o-transition: top 0.15s ease-in-out;
+    transition: top 0.15s ease-in-out;
+}
