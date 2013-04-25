@@ -49,3 +49,8 @@ This is for customizing sizing and position of the "busy" icon
     }
     
 This is the class that is added when the status manager is hidden
+
+
+Author
+=================
+For other open source projects, visit my [GitHub Portal](http://edwardhinkle.com)
