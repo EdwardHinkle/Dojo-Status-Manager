@@ -12,7 +12,7 @@
         // being able to load local modules
         packages: [{
             name: "managers",
-            location: location.pathname.replace(/\/[^/]*$/, '')
+            location: location.pathname.replace(/\/[^/]*$/, '') + '/../js/manager/'
         }]
     };
 </script>
@@ -24,7 +24,6 @@ require(["dojo/dom", "dojo/topic", "managers/statusManager", "dojo/domReady!"], 
 
     var sManager = new statusManager({
         containerId: "demoParent",
-        loadingImage: "./ajax-loader.gif",
         loadingString: "Loading..."
     });
 
